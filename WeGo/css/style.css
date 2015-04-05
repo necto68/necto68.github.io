@@ -85,6 +85,7 @@ center {
     border-left: 10px solid #cbcbcb;
     border-radius: 50%/20%;
     box-sizing: border-box;
+    display: table-cell;
 
     //border-radius: 0 0 15% 15%;
 }
@@ -108,8 +109,8 @@ center {
     height: 100%;
 }
 
-.joinUs {
-    padding-top: 15%;
+.joinUs div {
+    margin-top: 65%;
 }
 
 .joinUs div img {
