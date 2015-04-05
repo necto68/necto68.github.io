@@ -98,7 +98,8 @@ center {
 .joinUs div span {
     //font-family: Helvetica, sans-serif;
     font-family: Lato, Impact, sans-serif;
-    color: #383838;
+    //color: #383838;
+    color: black;
     font-weight: 100;
     font-size: 300%;
     //font-style:italic;
@@ -115,4 +116,5 @@ center {
 
 .joinUs div img {
     margin: 0 5%;
+    cursor: pointer;
 }
