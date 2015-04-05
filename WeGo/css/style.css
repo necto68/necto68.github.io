@@ -39,7 +39,7 @@ body, html {
 }
 .letter {
     width: 17%;
-    margin :0 1%;
+    margin :0 0.5%;
     height : 73%;
     display: inline-block;
     background-color: #000;
