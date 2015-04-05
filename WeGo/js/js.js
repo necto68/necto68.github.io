@@ -9,12 +9,12 @@ $(function(){
            }
            , 1000);*/
        //$('.letter').eq(2).css("position","absolute").animate({top:"40%"}, 1000);
-       $('.joinUs').animate({top:"-20%"}, 400);
+       $('.joinUs').stop().animate({top:"-20%"}, 400);
        //$('.letter').eq(1)
        //$('.letter').eq(2).animate({top:"40%"}, 1000);
    });
     $('.joinUs').on('mouseleave', function(){
-        $('.joinUs').animate({top:"-50%"}, 400);
+        $('.joinUs').stop().animate({top:"-50%"}, 400);
     })
     $('.letter').on('mouseover', function(){
         $(this).siblings('.letter').stop().animate({
