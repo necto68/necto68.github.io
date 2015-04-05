@@ -74,6 +74,6 @@ center {
     height:73%;
     z-index:1;
     border-bottom: thick solid #cbcbcb;
-    border-radius: 50%/25%;
+    border-radius: 50%/20%;
     //border-radius: 0 0 15% 15%;
 }
