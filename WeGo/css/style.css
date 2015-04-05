@@ -1,8 +1,18 @@
 body, html {
     background-color: #cbcbcb;
     height: 100%;
+    width:100%;
     margin: 0;
     padding: 0;
+}
+center {
+    height: 100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    z-index:0;
+
 }
 .content_old {
     width:100%;
@@ -16,7 +26,7 @@ body, html {
 }
 
 .content {
-    height:100%;
+    height:95%;
     width:100%;
     position: absolute;
     //vertical-align: middle;
@@ -45,4 +55,25 @@ body, html {
     background-color: #000;
     opacity: .46;
     font-family: Helvetica;
+}
+
+.toolbar {
+    width:100%;
+    height:5%;
+    background-color: #383838;
+    z-index:2;
+    position: absolute;
+}
+
+.joinUs{
+    position:absolute;
+    background-color:white;
+    width:35%;
+    left:32.5%;
+    top:-50%;
+    height:73%;
+    z-index:1;
+    border-bottom: thick solid #cbcbcb;
+    border-radius: 50%/25%;
+    //border-radius: 0 0 15% 15%;
 }
