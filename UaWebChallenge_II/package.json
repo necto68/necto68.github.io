@@ -1,0 +1,18 @@
+{
+  "name": "uwc-task",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "latest",
+    "grunt-html-validation":"latest",
+    "grunt-scss-lint":"latest",
+    "grunt-contrib-copy":"latest",
+    "bower":"latest"
+  }
+}

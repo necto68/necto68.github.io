@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="UWCAppAdmin">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>UWCApp Admin</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/app_admin.js"></script>
+
+</head>
+<body ng-controller="MainCtrl">
+<div style="width:70%; display:inline-block;">
+ <h2>Добавить категорию</h2>
+<input name = "name" placeholder="Имя категории"><br>
+<input name = "img" placeholder="Ссылка на картинку"><br>
+    <button>Добавить категорию</button><br>
+    <h2>Добавить товар в категорию</h2>
+    <select>
+    <option ng-repeat="cat in data.Categories" value="{{cat.name}}">{{cat.name}}</option>
+    </select><br>
+    <input name = "name" placeholder="Имя товара"><br>
+    <input name = "img" placeholder="Ссылка на картинку"><br>
+    <input name = "price" placeholder="Цена"><br>
+    <br>
+
+
+</div>
+<div style="width:30%; display:inline-block;">
+    <pre>
+{{data | json}}
+    </pre>
+</div>
+</body>
+</html>

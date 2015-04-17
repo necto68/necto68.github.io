@@ -1,0 +1,18 @@
+$font: 'Open Sans', sans-serif;
+$blue: #01b4d5;
+$yellow: #f6d416;
+$red: #e7302c;
+@mixin btn-color($brand) {
+  @if $brand=='fb' {
+    background-color: #3d5a99;
+  }
+  @if $brand=='vk' {
+    background-color: #3d5a99;
+  }
+  @if $brand=='tw' {
+    background-color: #2bb1ca;
+  }
+  @if $brand=='in' {
+    background-color: #1a6b8c;
+  }
+}

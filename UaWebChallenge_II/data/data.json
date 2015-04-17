@@ -1,0 +1,27 @@
+{
+  "Categories": [
+    {
+      "name": "Чемодани та сумки",
+      "img": "img/c11.png",
+      "goods": [
+        {
+          "name": "DERBY 15.7 Л КЛАСИЧНИЙ",
+          "img": "img/i1.png",
+          "price": "250 грн.",
+          "description": "<span>123:</span> 123",
+          "miniImg": [
+            "img/mini1.png",
+            "img/mini2.png",
+            "img/mini3.png"
+          ],
+          "title":"123123123",
+          "companyLogo":"img/DERBY.png",
+          "companyUrl":"http://www.derby.ua",
+          "companyAdress":"Украина, г. Киев,<br>пр-т Гагарина, 23",
+          "companyTel":"+38 (044) 292-7205, 296-2538<br>+38 (044) 296-1041",
+          "companyMap":"img/map.png"
+        }
+      ]
+    }
+  ]
+}
