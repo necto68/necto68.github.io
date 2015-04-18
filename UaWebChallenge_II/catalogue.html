@@ -34,44 +34,8 @@
                 <ul>
                     <li>
                         <div class="catalog-drop">
-                            <div class="catal-rows">
-                                <div class="catal-row">
-                                    <div class="crow-item"><i id="cr1"><img src="img/c1.png"
-                                                                            alt=""></i><span>Одяг</span></div>
-                                    <div class="crow-item"><i id="cr2"><img src="img/c2.png"
-                                                                            alt=""></i><span>Посуд</span>
-                                    </div>
-                                    <div class="crow-item"><i id="cr3"><img
-                                            src="img/c3.png" alt=""></i><span>Товари для дітей</span></div>
-                                </div>
-                                <div class="catal-row">
-                                    <div class="crow-item"><i id="cr4"><img src="img/c4.png"
-                                                                            alt=""></i><span>Взуття</span>
-                                    </div>
-                                    <div class="crow-item"><i id="cr5"><img
-                                            src="img/c5.png" alt=""></i><span>Алкогольні напої</span></div>
-                                    <div class="crow-item"><i id="cr6"><img src="img/c6.png"
-                                                                            alt=""></i><span>Прикраси</span>
-                                    </div>
-                                </div>
-                                <div class="catal-row">
-                                    <div class="crow-item"><i id="cr7"><img src="img/c7.png"
-                                                                            alt=""></i><span>Косметика</span>
-                                    </div>
-                                    <div class="crow-item"><i id="cr8"><img src="img/c8.png"
-                                                                            alt=""></i><span>Їжа</span>
-                                    </div>
-                                    <div class="crow-item"><i id="cr9"><img
-                                            src="img/c9.png" alt=""></i><span>Битовая хімія</span></div>
-                                </div>
-                                <div class="catal-row">
-                                    <div class="crow-item"><i id="cr10"><img
-                                            src="img/c10.png" alt=""></i><span>Засоби гігієни</span></div>
-                                    <div class="crow-item"><i id="cr11"><img src="img/c11.png" alt=""></i><span>Чемодани та сумки</span>
-                                    </div>
-                                    <div class="crow-item"><i id="cr12"><img src="img/c12.png" alt=""></i><span>Різне</span>
-                                    </div>
-                                </div>
+                            <div class="catal-rows" ng-bind-html="catStr">
+
                             </div>
                         </div>
                     </li>
@@ -101,7 +65,7 @@
     <ol class="breadcrumb">
         <li>Головна</li>
         <li>Каталог</li>
-        <li>Сумки та рюкзаки</li>
+        <li>{{catName}}</li>
     </ol>
     <div class="left-block">
         <span class="ctg-title">Чемодани та сумки</span>
@@ -134,7 +98,7 @@
     <div class="right-block">
         <div class="rbl-top">
                 <span class="rbl-title">
-                    Всього <span>1025</span> товарів
+                    Всього <span>{{catLength}}</span> товарів
                 </span>
 
             <div class="sort">
@@ -146,9 +110,9 @@
                         <span class="btn-title">Популярністю</span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Ціною (зростання)</a></li>
-                        <li><a href="#">Ціною (спадання)</a></li>
-                        <li><a href="#">Без сортування</a></li>
+                        <li><a href="">Ціною (зростання)</a></li>
+                        <li><a href="">Ціною (спадання)</a></li>
+                        <li><a href="">Без сортування</a></li>
                     </ul>
                 </div>
             </div>
@@ -171,141 +135,8 @@
                 </div>
             </div>
         </div>
-        <div class="products">
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i1.png" alt="...">
-                    </a>
+        <div class="products" ng-bind-html="prodStr">
 
-                    <div class="tr-desc">
-                        <span class="tr-text">Городський рюкзак Derby</span>
-                        <span class="tr-price">350 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i2.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Шкільный рюкзак Derby   <br>«Я люблю Україну»</span>
-                        <span class="tr-price">250 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i3.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Молодіжний рюкзак  <br>Derby</span>
-                        <span class="tr-price">1 050 грн.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i4.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Рюкзак Derby 15.7 л  <br>классичний Сірий</span>
-                        <span class="tr-price">350 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i5.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Шкільный рюкзак Derby   <br>«Я люблю Україну»</span>
-                        <span class="tr-price">250 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i6.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Молодіжний рюкзак  <br>Derby</span>
-                        <span class="tr-price">2050 грн.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i7.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Городський рюкзак Derby</span>
-                        <span class="tr-price">350 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i8.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Шкільный рюкзак Derby   <br>«Я люблю Україну»</span>
-                        <span class="tr-price">250 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i9.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Молодіжний рюкзак  <br>Derby</span>
-                        <span class="tr-price">1050грн.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i4.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Рюкзак Derby 15.7 л <br>классичний Сірий</span>
-                        <span class="tr-price">350 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i3.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Шкільный рюкзак Derby  <br>«Я люблю Україну»</span>
-                        <span class="tr-price">250 грн.</span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/i10.png" alt="...">
-                    </a>
-
-                    <div class="tr-desc">
-                        <span class="tr-text">Молодёжный рюкзак <br>Derby</span>
-                        <span class="tr-price">10500 грн.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="download-more">
-                <div class="circle">
-                    <i><img src="img/load_more.png" alt=""></i>
-                </div>
-                <span>Завантажити ще</span>
-            </div>
         </div>
     </div>
 </div>

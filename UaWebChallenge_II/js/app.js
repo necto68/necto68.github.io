@@ -1,7 +1,6 @@
 /**
  * Created by Roman on 16.04.2015.
  */
-(function() {
     var UWCApp = angular.module('UWCApp', [
         'ngRoute',
         'ngSanitize',
@@ -11,9 +10,13 @@
     UWCApp.config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
-                when('/catalogue/:catId', {
+                when('/c/:catId/p/:prodId', {
+                    templateUrl: 'product-page.html',
+                    controller: 'MainCtrl'
+                }).
+                when('/c/:catId', {
                     templateUrl: 'catalogue.html',
-                    controller: 'CatCtrl'
+                    controller: 'MainCtrl'
                 }).
                 when('/', {
                     templateUrl: 'main.html',
@@ -23,6 +26,3 @@
                     redirectTo: "/"
                 });
         }]);
-
-
-})();
