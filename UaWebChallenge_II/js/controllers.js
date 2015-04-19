@@ -12,7 +12,7 @@ var UWCAppControllers = angular.module('UWCAppControllers', []);
         else {
             $http.get('data/data.json').success(function (data) {
                 $scope.data = data;
-                localStorage.setItem('data', angular.toJson(data))
+                localStorage.setItem('data', angular.toJson(data));
             });
         }
         var catStr = "";
@@ -45,13 +45,13 @@ var UWCAppControllers = angular.module('UWCAppControllers', []);
                 }
             });
             prodStr += '<div class="download-more"><div class="circle"><i><img src="img/load_more.png" alt=""></i></div><span>Завантажити ще</span></div>';
+            $scope.catName = $scope.data.Categories[$routeParams.catId-1].name;
         }
         else {
             prodStr = "Категория не найдена";
         }
         $scope.prodStr = prodStr;
         $scope.catLength = catLength;
-        $scope.catName = $scope.data.Categories[$routeParams.catId-1].name;
         if($routeParams.prodId && $routeParams.prodId <= $scope.data.Categories[$routeParams.catId-1].goods.length && $routeParams.prodId > 0){
             $scope.pData = $scope.data.Categories[$routeParams.catId-1].goods[$routeParams.prodId-1];
         }

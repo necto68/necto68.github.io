@@ -6,33 +6,87 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/app_admin.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
 
     <link rel="stylesheet" href="styles/css/admin.css">
 
 </head>
 <body ng-controller="MainCtrl">
-<div style="width:70%; display:inline-block;">
+<div style="width:550px; height:100%; display:inline-block;">
  <h2>Добавить категорию</h2>
-<input name = "name" placeholder="Имя категории"><br>
-<input name = "img" placeholder="Ссылка на картинку"><br>
-    <button>Добавить категорию</button><br>
+ <form id="addCat">
+    <input name = "name" placeholder="Имя категории"><br>
+    <input name = "img" placeholder="Ссылка на картинку"><br>
+    <button ng-click="addCat()">Добавить категорию</button><br>
+ </form>
+
     <h2>Добавить товар в категорию</h2>
+    <form id="addProd">
     <select>
-    <option ng-repeat="cat in data.Categories" value="{{cat.name}}">{{cat.name}}</option>
+    <option ng-repeat="cat in data.Categories" value="{{$index}}">{{cat.name}}</option>
     </select><br>
     <input name = "name" placeholder="Имя товара"><br>
     <input name = "img" placeholder="Ссылка на картинку"><br>
     <input name = "price" placeholder="Цена"><br>
     <input name = "description" placeholder="Свойства через запятую: 123,456,789"><br>
     <input name = "miniImg" placeholder="Ссылки на уменьшенные картинки через запятую: img/1.png,img/2.png"><br>
-    <br>
+    <textarea id="editor" name = "title" placeholder="Описание">Описание</textarea><br>
+    <input name = "companyLogo" placeholder="Ссылка на лого компании"><br>
+    <input name = "companyUrl" placeholder="Ссылка на сайт компании"><br>
+    <input name = "companyAdress" placeholder="Адрес компании"><br>
+    <input name = "companyTel" placeholder="Телефон(ы) компании"><br>
+    <input name = "companyMap" placeholder="Сыллка на скриншот карты компании"><br>
+    <button ng-click="addProd()">Добавить продукт в категорию</button><br>
+    </form>
+
+    <h2>Удалить категорию</h2>
+    <form id="delCat">
+        <select>
+            <option ng-repeat="cat in data.Categories" value="{{$index}}">{{cat.name}}</option>
+        </select><br>
+        <button ng-click="delCat()">Удалить категорию</button><br>
+    </form>
+
+    <h2>Удалить товар из категории</h2>
+    <form id="delProd">
+        <select ng-model="iCat">
+            <option ng-repeat="cat in data.Categories" value="{{$index}}">{{cat.name}}</option>
+        </select><br>
+        <select>
+            <option ng-repeat="p in data.Categories[iCat].goods" value="{{$index}}">{{p.name}}</option>
+        </select><br>
+        <button ng-click="delProd()">Удалить товар из категории</button><br>
+    </form>
+    <hr>
+    <hr>
+    <h2>Добавить новость</h2>
+    <form id="addNew">
+        <input name = "title" placeholder="Заголовок категории"><br>
+        <p>Текст новости</p>
+        <textarea id="New" name = "text" placeholder="Текст новости"></textarea><br>
+        <button ng-click="addNew()">Добавить новость</button><br>
+    </form>
+    <h2>Удалить новость</h2>
+    <form id="delNew">
+        <select>
+            <option ng-repeat="n in data.News" value="{{$index}}">{{n.title}}</option>
+        </select><br>
+        <button ng-click="delNew()">Удалить новость</button><br>
+    </form>
 
 
 </div>
-<div style="width:30%; display:inline-block;">
+<div style="height:100%; display:inline-block;">
+    <button ng-click="saveData()">Сохранить JSON</button>
     <pre>
 {{data | json}}
     </pre>
 </div>
+<script>
+    CKEDITOR.config.width = '500';
+    CKEDITOR.replace('editor');
+    CKEDITOR.replace('New');
+    </script>
 </body>
 </html>
