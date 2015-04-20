@@ -7,10 +7,15 @@ google.setOnLoadCallback(drawChart);
 function drawChart () {
 
     var data = new google.visualization.DataTable();
-    data.addColumn('number', 'Hours Studied');
+    data.addColumn('number', 'VVP');
+    Clusters.forEach(function(cl, iCl){
+        data.addColumn('number', 'Кластер '+iCl);
+        data.addColumn({type:'string', role:'tooltip'});
+    });
+    /*data.addColumn('number', 'Hours Studied');
     data.addColumn('number', 'Final');
     data.addColumn({type:'string', role:'tooltip'});
-    /*data.addColumn('number', 'Final1');
+    data.addColumn('number', 'Final1');
     data.addColumn({type:'string', role:'tooltip'});
     data.addColumn('number', 'Final11');
     data.addColumn({type:'string', role:'tooltip'});*/
@@ -33,11 +38,11 @@ function drawChart () {
     ]);*/
     data.addRows(pointArray);
     var options = {
-        width: 900,
-        height: 500,
-        title: 'Students\' Final Grades',
-        hAxis: {title: 'Hours Studied'},
-        vAxis: {title: 'Grade'}
+        width: 1200,
+        height: 700,
+        title: 'Отношение ВВП к Джинни',
+        hAxis: {title: 'ВВП'},
+        vAxis: {title: 'Джинни'}
         //legend:'none'
     };
 

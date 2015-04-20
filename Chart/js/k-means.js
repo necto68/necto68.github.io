@@ -1,7 +1,7 @@
 /**
  * Created by Roman on 13.04.2015.
  */
-var k = 3;
+var k = 5;
 var Clusters = [];
 var rnd = shuffle(POINTS);
 //init Clusters
@@ -45,19 +45,29 @@ function Bind() {
     }
 }
 Bind();
+
+
+//create pointArray
 var pointArray = [];
+for(i=0; i<=Clusters.length*2+1; i++){
+
+}
 Clusters.forEach(function(cl, iCl){
 
     cl.points.forEach(function(p){
         var arr = [];
         arr.push(p.x);
+        while(arr.length!=1+(iCl+1)*2-2){
+            arr.push(null);
+            arr.push('');
+        }
         arr.push(p.y);
-        arr.push(String(iCl));
+        arr.push(p.Name);
+        while(arr.length!=1+Clusters.length*2){
+            arr.push(null);
+            arr.push('');
+        }
+
         pointArray.push(arr);
     });
-    var arr = [];
-    arr.push(cl.centerX);
-    arr.push(cl.centerY);
-    arr.push(String(iCl+' center'));
-    pointArray.push(arr);
 });
