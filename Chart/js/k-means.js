@@ -1,7 +1,7 @@
 /**
  * Created by Roman on 13.04.2015.
  */
-var k = 5;
+var k = prompt('Количество кластеров', 4);
 var Clusters = [];
 var rnd = shuffle(POINTS);
 //init Clusters
