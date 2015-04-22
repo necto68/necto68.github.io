@@ -6,6 +6,7 @@ var UWCAppControllers = angular.module('UWCAppControllers', []);
 
  UWCAppControllers.controller('MainCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
+        $scope.data = "";
         if (localStorage.getItem('data')){
             $scope.data = angular.fromJson(localStorage.getItem('data'));
         }
