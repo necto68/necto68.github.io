@@ -1,6 +1,3 @@
-/**
- * Created by Назар on 23.05.2015.
- */
 
 var UWCApp = angular.module('UWCApp', [
     'UWCAppControllers'
