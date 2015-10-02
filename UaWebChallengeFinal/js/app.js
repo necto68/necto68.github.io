@@ -10,7 +10,7 @@ UWCAppControllers.controller('MainCtrl', ['$scope',
         var nominations = ["Frontend", "Backend", "QA", "Верстка", "Дизайн", "Команда"];
         var marks = ["01.png", "02.png", "03.png", "04.png"];
         $scope.data = "";
-        if (localStorage.getItem('data')){
+        if (localStorage.getItem('dataFinal')){
             $scope.data = angular.fromJson(localStorage.getItem('dataFinal'));
         }
         else {
