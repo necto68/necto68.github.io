@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="UWCApp">
+<head>
+    <meta charset="UTF-8">
+    <title>UaWebChallengeFinal</title>
+    <link rel="stylesheet" href="css/paper-collapse.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <script src="js/jq.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/paper-collapse.js"></script>
+    <script src="js/DATA.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+<h1 style="margin-top:150px" align="center">UaWebChallenge Final</h1>
+<section>
+    <div class="container" >
+
+        <select ng-model="filterNomination">
+            <option value="">Все номинации</option>
+            <option value="0">Frontend</option>
+            <option value="1">Backend</option>
+            <option value="2">QA</option>
+            <option value="3">Верстка</option>
+            <option value="4">Дизайн</option>
+            <option value="5">Команда</option>
+        </select>
+        <select ng-model="filterCategory">
+            <option value="">Все категории</option>
+            <option value="0">Junior</option>
+            <option value="1">Middle/Senior</option>
+        </select>
+        <select ng-model="filterScore">
+            <option value="">Все участники</option>
+            <option value="null">Без оценки</option>
+        </select>
+
+        <div ng-click="clickPanel();" class="collapse-card" ng-repeat="m in data | orderBy:'-averageScore' | filter: {nomination: filterNomination, category: filterCategory, averageScore: filterScore}" >
+            <div class="title">
+                <span ng-if="m.isChecked">{{m.averageScore}} баллов <img ng-src="{{'img/marks/'+toImgMarks(m.averageScore)}}"></span>
+                <span ng-if="!m.isChecked">Без оценки</span>
+                <strong><img ng-src="{{'img/nominations/0'+(m.nomination+1)+'.png'}}">{{m.name}} {{m.surname}}: {{toNomination(m.nomination)}} - {{toCategory(m.category)}}</strong>
+            </div>
+            <div class="body">
+                <img ng-src="{{'img/nominations/0'+(m.nomination+1)+'big.png'}}"><br>
+                {{m.name}} {{m.surname}}<br>
+                {{toNomination(m.nomination)}} - {{toCategory(m.category)}}<br>
+                E-mail: {{m.email}}<br>
+                1.	Соответствие поставленной задаче <input min="1" max="10" type="number" ng-model="m.scores.accordance"><br>
+                2.	Оригинальность идеи <input min="1" max="10" type="number" ng-model="m.scores.originality"><br>
+                3.	Качество выполнения <input min="1" max="10" type="number" ng-model="m.scores.quality"><br>
+                4.	Бонус <input min="0" max="10" type="number" ng-model="m.scores.bonus"><br>
+                <button ng-click="acceptMark($index)">Принять оценку</button><br>
+                Прикрепленные файлы: <a href="{{m.taskUrl}}" target="_blank">Скачать</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
