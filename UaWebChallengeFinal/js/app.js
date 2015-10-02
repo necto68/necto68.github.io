@@ -14,15 +14,15 @@ UWCAppControllers.controller('MainCtrl', ['$scope',
         var marks = ["01.png", "02.png", "03.png", "04.png"];
         $scope.data = "";
         if (localStorage.getItem('data')){
-            $scope.data = angular.fromJson(localStorage.getItem('data'));
+            $scope.data = angular.fromJson(localStorage.getItem('dataFinal'));
         }
         else {
             $scope.data = DATA;
-            localStorage.setItem('data', angular.toJson($scope.data));
+            localStorage.setItem('dataFinal', angular.toJson($scope.data));
         }
 
         $scope.$watch("data", function(newValue, oldValue){
-            localStorage.setItem('data', angular.toJson(newValue));
+            localStorage.setItem('dataFinal', angular.toJson(newValue));
         });
 
         $scope.toCategory = function(cat){
@@ -54,6 +54,6 @@ UWCAppControllers.controller('MainCtrl', ['$scope',
             var data = $scope.data[index];
             data.isChecked = true;
             data.averageScore = Number(((data.scores.accordance+data.scores.originality+data.scores.quality+data.scores.bonus)/4).toFixed(1));
-            localStorage.setItem('data', angular.toJson($scope.data));
+            localStorage.setItem('dataFinal', angular.toJson($scope.data));
         };
     }]);
